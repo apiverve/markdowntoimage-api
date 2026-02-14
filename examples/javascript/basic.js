@@ -9,25 +9,15 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/markdowntoimage';
 
 /**
- * Make a POST request to the Markdown to Image API
+ * Make a GET request to the Markdown to Image API
  */
 async function callMarkdowntoImageAPI() {
   try {
-    // Request body
-    const requestBody &#x3D; {
-    &quot;markdown&quot;: &quot;# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.&quot;,
-    &quot;width&quot;: 1280,
-    &quot;height&quot;: 800,
-    &quot;format&quot;: &quot;png&quot;
-};
-
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
+        'x-api-key': API_KEY
+      }
     });
 
     // Check if response is successful
