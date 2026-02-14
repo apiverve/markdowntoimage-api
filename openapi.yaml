@@ -1,23 +1,25 @@
 openapi: 3.0.4
 info:
   title: Markdown to Image
-  description: Markdown to Image converts markdown text into visual image representations, rendering content as PNG, JPEG, or WebP images.
+  description: >-
+    Markdown to Image converts markdown text into visual image representations,
+    rendering content as PNG, JPEG, or WebP images.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/markdowntoimage:
     post:
       summary: Convert Markdown to Image
-      description: Markdown to Image converts markdown text into visual image representations, rendering content as PNG, JPEG, or WebP images.
+      description: Convert markdown text to image file
       operationId: markdowntoimage
       parameters: []
       responses:
@@ -28,25 +30,26 @@ paths:
               schema:
                 type: object
                 properties:
-                  api:
-                    type: string
-                    description: api
                   status:
                     type: string
                     description: status
-                  data:
+                  error:
                     type: string
+                    description: error
+                  data:
+                    type: object
                     description: data
               example:
-                api: markdowntoimage
-                status: success
+                status: ok
+                error: null
                 data:
-                  imageName: sample.png
+                  imageName: 31e86a48-125a-464a-8ea5-8b342226944f.png
                   format: .png
-                  downloadURL: https://storage.googleapis.com/apiverve.appspot.com/sample.png
-                  expires: 2025-11-23T00:00:00.0000000Z
-                  markdownLength: 250
-                  htmlLength: 350
+                  downloadURL: >-
+                    https://storage.googleapis.com/apiverve/APIData/markdowntoimage/31e86a48-125a-464a-8ea5-8b342226944f.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010365&Signature=PXD9Zct7HearzSJvxZcNlnlnPdga8qH1Mln4I7tTDmrzSolUdwDxZx3Xdsy6LVu8B%2F1es7keTFKcnNnBm2Er9Kqbmg5j9BeTX3lQnJsIVh5gAlsEheT%2B%2FpWjWnjRWc%2FdtqurbUR%2BcSYMELqufs%2FPcrK62OAl0lmf6zARA2KtUP8qop%2FORbG81h%2BkFIoy3VaaRVXiceewF6HQzBz%2FFBhmc1oOAiEPiQZl7PQRu%2Fz4oX%2BtMbnWPUoUmIXVVfDmMw4XsyWlckQo%2BfZ34B79aOaBznpuJ0Z%2BlN1upsHPvBO33WRdQHECEUMJmGB7KgRZU%2Bjqco4LSEOO9kfkLlMxYyl3pQ%3D%3D
+                  expires: 1766010365188
+                  markdownLength: 282
+                  htmlLength: 376
                   dimensions:
                     width: 1280
                     height: 800
@@ -55,7 +58,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
       requestBody:
         required: true
         content:
@@ -65,70 +68,18 @@ paths:
               properties:
                 markdown:
                   type: string
-                  description: Markdown text to convert (max 500,000 characters)
-                  example: >-
-                    # Sample Markdown Document
-
-
-                    This is a **sample** markdown document that will be converted to an image.
-
-
-                    ## Features
-
-
-                    - Supports headers
-
-                    - Supports **bold** and *italic* text
-
-                    - Supports lists
-
-
-                    ## Example
-
-
-                    This markdown will be rendered as a visual image with customizable dimensions.
+                  description: Markdown text to convert
                 width:
                   type: integer
-                  description: 'Image width in pixels (100-3840, default: 1280)'
-                  default: '1280'
-                  example: 1280
+                  description: Image width in pixels
                 height:
                   type: integer
-                  description: 'Image height in pixels (100-2160, default: 800)'
-                  default: '800'
-                  example: 800
+                  description: Image height in pixels
                 format:
                   type: string
-                  description: 'Output format: png, jpeg, jpg, webp (default: png)'
-                  default: png
-                  example: png
+                  description: Output image format
               required:
-              - markdown
-              example:
-                markdown: >-
-                  # Sample Markdown Document
-
-
-                  This is a **sample** markdown document that will be converted to an image.
-
-
-                  ## Features
-
-
-                  - Supports headers
-
-                  - Supports **bold** and *italic* text
-
-                  - Supports lists
-
-
-                  ## Example
-
-
-                  This markdown will be rendered as a visual image with customizable dimensions.
-                width: 1280
-                height: 800
-                format: png
+                - markdown
 components:
   securitySchemes:
     api_key:
@@ -136,4 +87,30 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  markdown: >-
+    # Sample Markdown Document
+
+
+    This is a **sample** markdown document that will be converted to an image.
+
+
+    ## Features
+
+
+    - Supports headers
+
+    - Supports **bold** and *italic* text
+
+    - Supports lists
+
+
+    ## Example
+
+
+    This markdown will be rendered as a visual image with customizable
+    dimensions.
+  width: 1280
+  height: 800
+  format: png
