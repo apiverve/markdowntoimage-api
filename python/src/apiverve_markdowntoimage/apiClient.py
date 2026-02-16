@@ -23,7 +23,12 @@ class ValidationError(MarkdowntoimageAPIClientError):
 
 class MarkdowntoimageAPIClient:
     # Validation rules for parameters (generated from schema)
-    VALIDATION_RULES = {"markdown": {"type": "string", "required": True, "maxLength": 500000}, "width": {"type": "integer", "required": False, "min": 100, "max": 3840, "default": 1280}, "height": {"type": "integer", "required": False, "min": 100, "max": 2160, "default": 800}, "format": {"type": "string", "required": False, "default": "png"}}
+    VALIDATION_RULES = {
+        "markdown": {"type": "string", "required": True, "maxLength": 500000},
+        "width": {"type": "integer", "required": False, "min": 100, "max": 3840, "default": 1280},
+        "height": {"type": "integer", "required": False, "min": 100, "max": 2160, "default": 800},
+        "format": {"type": "string", "required": False, "default": "png"}
+    }
 
     # Format validation patterns
     FORMAT_PATTERNS = {
@@ -71,18 +76,10 @@ class MarkdowntoimageAPIClient:
                 "API key is required. Get your API key at: https://apiverve.com"
             )
 
-        # Check format (alphanumeric, hyphens, and underscores for prefixed keys)
+        # Check format (GUID, prefixed keys like apv_xxx, or alphanumeric)
         if not re.match(r'^[a-zA-Z0-9_-]+$', api_key):
             raise MarkdowntoimageAPIClientError(
                 "Invalid API key format. API key should only contain letters, numbers, hyphens, and underscores. "
-                "Get your API key at: https://apiverve.com"
-            )
-
-        # Check length (at least 32 characters without hyphens/underscores)
-        trimmed_key = api_key.replace('-', '').replace('_', '')
-        if len(trimmed_key) < 32:
-            raise MarkdowntoimageAPIClientError(
-                "Invalid API key. API key appears to be too short. "
                 "Get your API key at: https://apiverve.com"
             )
 
