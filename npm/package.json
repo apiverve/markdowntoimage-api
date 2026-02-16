@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/markdowntoimage",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Markdown to Image converts markdown text into visual image representations, rendering content as PNG, JPEG, or WebP images.",
   "main": "index.js",
   "types": "index.d.ts",
