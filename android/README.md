@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:markdowntoimage-api:1.1.13'
+    implementation 'com.github.apiverve:markdowntoimage-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,19 @@ MarkdowntoImageAPIClient client = new MarkdowntoImageAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("markdown", "# Title\n\nThis is **bold** text.");
+    parameters.put("markdown", "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.");
     parameters.put("width", 1280);
     parameters.put("height", 800);
     parameters.put("format", "png");
