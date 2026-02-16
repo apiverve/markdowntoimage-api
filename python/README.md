@@ -44,7 +44,24 @@ from apiverve_markdowntoimage.apiClient import MarkdowntoimageAPIClient
 # Initialize the client with your APIVerve API key
 api = MarkdowntoimageAPIClient("[YOUR_API_KEY]")
 
-query = { "markdown": "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.", "width": 1280, "height": 800, "format": "png" }
+query = {
+    "markdown": "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.",
+    "width": 1280,
+    "height": 800,
+    "format": "png"
+}
 
 try:
     # Make the API call
@@ -82,7 +99,24 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "markdown": "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.", "width": 1280, "height": 800, "format": "png" }
+query = {
+    "markdown": "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.",
+    "width": 1280,
+    "height": 800,
+    "format": "png"
+}
 ```
 
 ###### Simple Request
@@ -129,7 +163,24 @@ from apiverve_markdowntoimage.apiClient import MarkdowntoimageAPIClient, Markdow
 
 api = MarkdowntoimageAPIClient("[YOUR_API_KEY]")
 
-query = { "markdown": "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.", "width": 1280, "height": 800, "format": "png" }
+query = {
+    "markdown": "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.",
+    "width": 1280,
+    "height": 800,
+    "format": "png"
+}
 
 try:
     result = api.execute(query)
@@ -150,7 +201,24 @@ from apiverve_markdowntoimage.apiClient import MarkdowntoimageAPIClient, Markdow
 
 api = MarkdowntoimageAPIClient("[YOUR_API_KEY]")
 
-query = { "markdown": "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.", "width": 1280, "height": 800, "format": "png" }
+query = {
+    "markdown": "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.",
+    "width": 1280,
+    "height": 800,
+    "format": "png"
+}
 
 try:
     result = api.execute(query)
@@ -184,7 +252,24 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_markdowntoimage.apiClient import MarkdowntoimageAPIClient, MarkdowntoimageAPIClientError
 
-query = { "markdown": "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.", "width": 1280, "height": 800, "format": "png" }
+query = {
+    "markdown": "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.",
+    "width": 1280,
+    "height": 800,
+    "format": "png"
+}
 
 # Using context manager ensures proper cleanup
 with MarkdowntoimageAPIClient("[YOUR_API_KEY]") as api:
@@ -210,7 +295,24 @@ from apiverve_markdowntoimage.apiClient import MarkdowntoimageAPIClient
 # Enable debug mode
 api = MarkdowntoimageAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "markdown": "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.", "width": 1280, "height": 800, "format": "png" }
+query = {
+    "markdown": "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.",
+    "width": 1280,
+    "height": 800,
+    "format": "png"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -225,8 +327,26 @@ from apiverve_markdowntoimage.apiClient import MarkdowntoimageAPIClient
 
 api = MarkdowntoimageAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "markdown": "# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.",
+    "width": 1280,
+    "height": 800,
+    "format": "png"
+}
+
 try:
-    query = { "markdown": "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.", "width": 1280, "height": 800, "format": "png" }
     result = api.execute(query)
     print(result)
 finally:
