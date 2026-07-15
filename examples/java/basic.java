@@ -12,8 +12,27 @@ public class BasicExample {
         MarkdowntoImageAPIClient client = new MarkdowntoImageAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Request body
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;markdown&quot;, &quot;# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.&quot;);
+        parameters.put(&quot;width&quot;, 1280);
+        parameters.put(&quot;height&quot;, 800);
+        parameters.put(&quot;format&quot;, &quot;png&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
