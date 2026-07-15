@@ -14,14 +14,23 @@ API_URL = 'https://api.apiverve.com/v1/markdowntoimage'
 
 def call_markdowntoimage_api():
     """
-    Make a GET request to the Markdown to Image API
+    Make a POST request to the Markdown to Image API
     """
     try:
+        # Request body
+        request_body &#x3D; {
+    &#x27;markdown&#x27;: &#x27;# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.&#x27;,
+    &#x27;width&#x27;: 1280,
+    &#x27;height&#x27;: 800,
+    &#x27;format&#x27;: &#x27;png&#x27;
+}
+
         headers = {
-            'x-api-key': API_KEY
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json'
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.post(API_URL, headers=headers, json=request_body)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
