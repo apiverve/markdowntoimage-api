@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/markdowntoimage";
 
         /// <summary>
-        /// Make a GET request to the Markdown to Image API
+        /// Make a POST request to the Markdown to Image API
         /// </summary>
         static async Task<JsonDocument> CallMarkdowntoImageAPI()
         {
@@ -29,7 +29,25 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                var response = await client.GetAsync(API_URL);
+                // Request body
+                var requestBody &#x3D; new { markdown &#x3D; &quot;# Sample Markdown Document
+
+This is a **sample** markdown document that will be converted to an image.
+
+## Features
+
+- Supports headers
+- Supports **bold** and *italic* text
+- Supports lists
+
+## Example
+
+This markdown will be rendered as a visual image with customizable dimensions.&quot;, width &#x3D; 1280, height &#x3D; 800, format &#x3D; &quot;png&quot; };
+
+                var jsonContent = JsonSerializer.Serialize(requestBody);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(API_URL, content);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
