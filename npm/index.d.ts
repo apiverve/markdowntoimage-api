@@ -4,27 +4,39 @@ declare module '@apiverve/markdowntoimage' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface markdowntoimageResponse {
     status: string;
     error: string | null;
     data: MarkdowntoImageData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface MarkdowntoImageData {
-      imageName:      string;
-      format:         string;
-      downloadURL:    string;
-      expires:        Date;
-      markdownLength: number;
-      htmlLength:     number;
+      imageName:      null | string;
+      format:         null | string;
+      downloadURL:    null | string;
+      expires:        number | null;
+      markdownLength: number | null;
+      htmlLength:     number | null;
       dimensions:     Dimensions;
   }
   
   interface Dimensions {
-      width:  number;
-      height: number;
+      width:  number | null;
+      height: number | null;
   }
 
   export default class markdowntoimageWrapper {
