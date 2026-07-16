@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.MarkdowntoImage;
 
 class Program
 {
@@ -60,7 +60,7 @@ class Program
         // Initialize the API client
         var apiClient = new MarkdowntoImageAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -119,7 +119,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.MarkdowntoImage;
 
 public class Example
 {
@@ -127,7 +127,7 @@ public class Example
     {
         var apiClient = new MarkdowntoImageAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -154,7 +154,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.MarkdowntoImage;
 
 public class Example
 {
@@ -162,7 +162,7 @@ public class Example
     {
         var apiClient = new MarkdowntoImageAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -194,7 +194,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.MarkdowntoImage;
 
 public class Example
 {
@@ -202,7 +202,7 @@ public class Example
     {
         var apiClient = new MarkdowntoImageAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -249,7 +249,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.MarkdowntoImage;
 
 public class Example
 {
@@ -261,7 +261,7 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -305,7 +305,7 @@ var apiClient = new MarkdowntoImageAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
+var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -334,7 +334,7 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
+var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -355,7 +355,7 @@ var apiClient = new MarkdowntoImageAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
+var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -370,7 +370,7 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
+var queryOptions = new MarkdowntoImageQueryOptions {
     markdown = "# Sample Markdown Document\n\nThis is a **sample** markdown document that will be converted to an image.\n\n## Features\n\n- Supports headers\n- Supports **bold** and *italic* text\n- Supports lists\n\n## Example\n\nThis markdown will be rendered as a visual image with customizable dimensions.",
     width = 1280,
     height = 800,
@@ -391,15 +391,15 @@ using (var apiClient = new MarkdowntoImageAPIClient("[YOUR_API_KEY]"))
 
 ```json
 {
-  "api": "markdowntoimage",
-  "status": "success",
+  "status": "ok",
+  "error": null,
   "data": {
-    "imageName": "sample.png",
+    "imageName": "31e86a48-125a-464a-8ea5-8b342226944f.png",
     "format": ".png",
-    "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/sample.png",
-    "expires": "2025-11-23T00:00:00Z",
-    "markdownLength": 250,
-    "htmlLength": 350,
+    "downloadURL": "https://storage.googleapis.com/apiverve/APIData/markdowntoimage/31e86a48-125a-464a-8ea5-8b342226944f.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010365&Signature=PXD9Zct7HearzSJvxZcNlnlnPdga8qH1Mln4I7tTDmrzSolUdwDxZx3Xdsy6LVu8B%2F1es7keTFKcnNnBm2Er9Kqbmg5j9BeTX3lQnJsIVh5gAlsEheT%2B%2FpWjWnjRWc%2FdtqurbUR%2BcSYMELqufs%2FPcrK62OAl0lmf6zARA2KtUP8qop%2FORbG81h%2BkFIoy3VaaRVXiceewF6HQzBz%2FFBhmc1oOAiEPiQZl7PQRu%2Fz4oX%2BtMbnWPUoUmIXVVfDmMw4XsyWlckQo%2BfZ34B79aOaBznpuJ0Z%2BlN1upsHPvBO33WRdQHECEUMJmGB7KgRZU%2Bjqco4LSEOO9kfkLlMxYyl3pQ%3D%3D",
+    "expires": 1766010365188,
+    "markdownLength": 282,
+    "htmlLength": 376,
     "dimensions": {
       "width": 1280,
       "height": 800
