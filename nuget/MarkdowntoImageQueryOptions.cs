@@ -20,13 +20,13 @@ namespace APIVerve.API.MarkdowntoImage
         /// Image width in pixels
         /// </summary>
         [JsonProperty("width")]
-        public string Width { get; set; }
+        public int? Width { get; set; }
 
         /// <summary>
         /// Image height in pixels
         /// </summary>
         [JsonProperty("height")]
-        public string Height { get; set; }
+        public int? Height { get; set; }
 
         /// <summary>
         /// Output image format
