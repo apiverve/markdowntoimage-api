@@ -25,6 +25,9 @@ namespace APIVerve.API.MarkdowntoImage
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -39,13 +42,13 @@ namespace APIVerve.API.MarkdowntoImage
         public Uri DownloadUrl { get; set; }
 
         [JsonProperty("expires")]
-        public DateTimeOffset Expires { get; set; }
+        public long? Expires { get; set; }
 
         [JsonProperty("markdownLength")]
-        public long MarkdownLength { get; set; }
+        public long? MarkdownLength { get; set; }
 
         [JsonProperty("htmlLength")]
-        public long HtmlLength { get; set; }
+        public long? HtmlLength { get; set; }
 
         [JsonProperty("dimensions")]
         public Dimensions Dimensions { get; set; }
@@ -54,9 +57,21 @@ namespace APIVerve.API.MarkdowntoImage
     public partial class Dimensions
     {
         [JsonProperty("width")]
-        public long Width { get; set; }
+        public long? Width { get; set; }
 
         [JsonProperty("height")]
-        public long Height { get; set; }
+        public long? Height { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
