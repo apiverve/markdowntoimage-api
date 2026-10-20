@@ -3,11 +3,10 @@ Markdown to Image API
 
 Markdown to Image converts markdown text into visual image representations, rendering content as PNG, JPEG, or WebP images.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Markdown to Image API](https://markdowntoimage.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-markdowntoimage.svg)](https://pypi.org/project/apiverve-markdowntoimage/)
+
+This is a Python wrapper for the [Markdown to Image API](https://apiverve.com/marketplace/markdowntoimage?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-markdowntoimage
 
 ## Configuration
 
-Before using the markdowntoimage API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Markdown to Image API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -77,7 +76,7 @@ except Exception as e:
 
 ## Usage
 
-The Markdown to Image API documentation is found here: [https://docs.apiverve.com/ref/markdowntoimage](https://docs.apiverve.com/ref/markdowntoimage?utm_source=pypi&utm_medium=readme).
+The Markdown to Image API documentation is found here: [https://docs.apiverve.com/ref/markdowntoimage](https://docs.apiverve.com/ref/markdowntoimage?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -133,15 +132,15 @@ print(result)
 
 ```json
 {
-  "api": "markdowntoimage",
-  "status": "success",
+  "status": "ok",
+  "error": null,
   "data": {
-    "imageName": "sample.png",
+    "imageName": "31e86a48-125a-464a-8ea5-8b342226944f.png",
     "format": ".png",
-    "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/sample.png",
-    "expires": "2025-11-23T00:00:00Z",
-    "markdownLength": 250,
-    "htmlLength": 350,
+    "downloadURL": "https://storage.googleapis.com/apiverve/APIData/markdowntoimage/31e86a48-125a-464a-8ea5-8b342226944f.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010365&Signature=PXD9Zct7HearzSJvxZcNlnlnPdga8qH1Mln4I7tTDmrzSolUdwDxZx3Xdsy6LVu8B%2F1es7keTFKcnNnBm2Er9Kqbmg5j9BeTX3lQnJsIVh5gAlsEheT%2B%2FpWjWnjRWc%2FdtqurbUR%2BcSYMELqufs%2FPcrK62OAl0lmf6zARA2KtUP8qop%2FORbG81h%2BkFIoy3VaaRVXiceewF6HQzBz%2FFBhmc1oOAiEPiQZl7PQRu%2Fz4oX%2BtMbnWPUoUmIXVVfDmMw4XsyWlckQo%2BfZ34B79aOaBznpuJ0Z%2BlN1upsHPvBO33WRdQHECEUMJmGB7KgRZU%2Bjqco4LSEOO9kfkLlMxYyl3pQ%3D%3D",
+    "expires": 1766010365188,
+    "markdownLength": 282,
+    "htmlLength": 376,
     "dimensions": {
       "width": 1280,
       "height": 800
@@ -358,7 +357,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -369,12 +368,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
