@@ -31,7 +31,7 @@ This markdown will be rendered as a visual image with customizable dimensions.',
  * print_r($response);
  * ```
  *
- * @see https://markdowntoimage.apiverve.com?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/markdowntoimage?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {
