@@ -4,6 +4,6 @@ require_relative "apiverve_markdowntoimage/client"
 
 module APIVerve
   module Markdowntoimage
-    VERSION = "1.2.4"
+    VERSION = "1.2.5"
   end
 end
