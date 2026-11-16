@@ -1,6 +1,6 @@
 name: apiverve_markdowntoimage
 description: "Markdown to Image converts markdown text into visual image representations, rendering content as PNG, JPEG, or WebP images."
-version: 1.2.5
+version: 1.2.6
 homepage: https://apiverve.com/marketplace/markdowntoimage?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/markdowntoimage-api/tree/main/dart
 
